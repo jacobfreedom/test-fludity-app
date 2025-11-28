@@ -6,7 +6,7 @@ import { setViewportHeight } from 'vh-calculation-fix'
 function App() {
 
     useEffect(() => {
-    const stop = setViewportHeight({ updateOnFocus: true })
+    const stop = setViewportHeight({ updateOnFocus: false })
     return () => stop()
   }, [])
   
