@@ -1,7 +1,14 @@
  
 import './App.css'
+import { initViewportHeight } from 'vh-calculation-fix';
+
 
 function App() {
+
+    useEffect(() => {
+    const stop = initViewportHeight({ updateOnFocus: true });
+    return () => stop();
+  }, []);
   
 
   return (
