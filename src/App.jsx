@@ -38,8 +38,7 @@ const setViewportHeight = () => {
 function App() {
 
     useEffect(() => {
-    const stop = setViewportHeight()
-    return () => stop()
+    setViewportHeight()
   }, [])
   
 
