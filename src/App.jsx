@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
-  const [mode, setMode] = useState('dvh')
+  const [mode, setMode] = useState('lvh')
 
   useEffect(() => {
     const doc = document.documentElement
