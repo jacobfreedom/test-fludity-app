@@ -10,7 +10,7 @@ const isInAppBrowser = (
 
 /(; wv\)|WebView)/.test(userAgent) ||
 
-/FBAN|FBAV|Twitter|Instagram|LinkedIn/.test(userAgent) ||
+/FBAN|FBAV|Twitter|Instagram|Telegram|LinkedIn/.test(userAgent) ||
 
 (/iPhone|iPod|iPad/.test(userAgent) && !/(Safari)/.test(userAgent))
 
