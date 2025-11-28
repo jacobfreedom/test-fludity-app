@@ -1,6 +1,58 @@
 import { useEffect } from 'react'
 import './App.css'
-import { setViewportHeight } from 'vh-calculation-fix';
+// import { setViewportHeight } from 'vh-calculation-fix';
+
+const setViewportHeight = () => {
+
+const userAgent = navigator.userAgent || window.opera
+
+const isInAppBrowser = (
+
+/(; wv\)|WebView)/.test(userAgent) ||
+
+/FBAN|FBAV|Twitter|Instagram|LinkedIn/.test(userAgent) ||
+
+(/iPhone|iPod|iPad/.test(userAgent) && !/(Safari)/.test(userAgent))
+
+)
+
+if (!isInAppBrowser) {
+
+document.documentElement.style.setProperty('--svh', '100svh')
+
+document.documentElement.style.setProperty('--lvh', '100lvh')
+
+return () => {}
+
+}
+
+const vh = window.innerHeight
+
+const maxVh = (() => {
+
+const windowInnerHeight = window.innerHeight
+
+const visualViewportHeight = window.visualViewport ? window.visualViewport.height : windowInnerHeight
+
+const isIOS = /iPad|iPhone|iPod/.test(userAgent)
+
+if (isIOS) {
+
+return Math.min(visualViewportHeight, windowInnerHeight)
+
+}
+
+return Math.max(windowInnerHeight, visualViewportHeight)
+
+})()
+
+document.documentElement.style.setProperty('--svh', `${vh}px`)
+
+document.documentElement.style.setProperty('--lvh', `${maxVh}px`)
+
+return () => {}
+
+}
 
 function App() {
 
