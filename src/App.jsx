@@ -1,6 +1,6 @@
- 
+import { useEffect } from 'react'
 import './App.css'
-import { initViewportHeight } from 'vh-calculation-fix';
+import { initViewportHeight } from 'vh-calculation-fix'
 
 
 function App() {
