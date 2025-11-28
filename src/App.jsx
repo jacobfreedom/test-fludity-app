@@ -6,7 +6,7 @@ function App() {
 
   useEffect(() => {
     const doc = document.documentElement
-    const value = mode === 'lvh' ? 'var(--lvh)' : mode === 'svh' ? 'var(--svh)' : '100dvh'
+    const value = mode === 'lvh' ? 'var(--lvh)' : 'var(--svh)'
     doc.style.setProperty('--YH', value)
   }, [mode])
 
@@ -17,7 +17,6 @@ function App() {
         <div className="mode">
           <label><input type="radio" name="mode" checked={mode==='lvh'} onChange={() => setMode('lvh')} /> lvh</label>
           <label><input type="radio" name="mode" checked={mode==='svh'} onChange={() => setMode('svh')} /> svh</label>
-          <label><input type="radio" name="mode" checked={mode==='dvh'} onChange={() => setMode('dvh')} /> dvh</label>
         </div>
       </div>
 

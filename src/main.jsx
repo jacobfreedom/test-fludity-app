@@ -4,8 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import { initViewportHeight } from 'vh-calculation-fix'
 
-// Initialize CSS variables --svh and --lvh for the demo
-initViewportHeight({ updateOnFocus: true })
+initViewportHeight({ updateOnFocus: true, useMinOnIOS: true })
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
